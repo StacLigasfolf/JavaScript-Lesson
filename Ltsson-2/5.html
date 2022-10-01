@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework-5</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+  const num1 = +prompt('Введите первое число: ');
+  const num2 = +prompt('Введите второе число: ');
+  const operator = prompt('Введите оператор: ');
+  /**
+   * Функция принимает значения введенные пользователем и возвращает их сумму
+  **/
+  function summa(){
+    return num1 + num2;
+  }
+
+  /**
+   * Функция принимает значения введенные пользователем и возвращает их разность
+  **/
+  function difference(){
+    return num1 - num2;
+  }
+
+  /**
+   * Функция принимает значения введенные пользователем и возвращает их произведение
+  **/
+  function multiplication(){
+    return num1 * num2;
+  }
+
+  /**
+   * Функция принимает значения введенные пользователем и возвращает результат деления
+  **/
+  function division(){
+    return num1 / num2;
+  }
+
+  /* 
+    * Функция в зависимостри от переменной operator вызывает соответствующую функцию "+", "-", "*", "/" и возвращает корректный результат
+  */
+  function mathOperation() {
+    if (operator == "+"){
+      console.log(`Сумма = ${summa(num1, num2)}`);
+    }else if (operator == "-"){
+      console.log(`Разность = ${difference(num1, num2)}`);
+    }else if (operator == "*"){
+      console.log(`Умножение = ${multiplication(num1, num2)}`);
+    }else if (operator == "/"){
+      console.log(`Деление = ${division(num1, num2)}`);
+    }else {
+      console.log(NaN);
+    }
+  }
+
+  console.log(mathOperation(num1, num2, operator));
+</script>
+</body>
+</html>
